@@ -1,0 +1,209 @@
+/* 1. ПОДКЛЮЧЕНИЕ ШРИФТОВ */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@400;600&display=swap");
+
+/* 2. БАЗОВЫЕ НАСТРОЙКИ СТРАНИЦЫ */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Высота на весь экран */
+  background-color: #050505; /* Почти черный цвет */
+  /* Радиальный градиент: светлее в центре, чернее по краям */
+  background-image: radial-gradient(circle at center, #112211 0%, #000000 80%);
+  font-family: 'Montserrat', sans-serif; /* Основной шрифт для всего сайта */
+  box-sizing: border-box;
+}
+
+/* 3. КОНТЕЙНЕР ДЛЯ ЦЕНТРИРОВАНИЯ (На весь экран) */
+.box {
+  display: flex;
+  align-items: center; /* Центр по вертикали */
+  justify-content: center; /* Центр по горизонтали */
+  height: 100vh;
+  width: 100%;
+  padding: 20px; /* Чтобы на телефонах не прилипало к краям */
+}
+
+/* 4. КАРТОЧКА (Стеклянный эффект) */
+.card {
+  background-color: rgba(20, 20, 20, 0.85); /* Полупрозрачный черный */
+  border: 1px solid #333; /* Тонкая серая рамка */
+  border-top: 3px solid #00ff41; /* Яркая зеленая полоса сверху */
+  
+  padding: 40px;
+  border-radius: 20px; /* Скругленные углы */
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  
+  /* Легкое зеленое свечение вокруг карточки */
+  box-shadow: 0 0 40px rgba(0, 255, 65, 0.1); 
+  
+  /* Плавное появление (опционально) */
+  transition: transform 0.3s;
+}
+
+.card:hover {
+    /* При наведении на саму карточку она чуть всплывает */
+    transform: translateY(-5px);
+}
+
+/* 5. ФОТОГРАФИЯ (Аватар) */
+.rounded-image {
+  width: 200px; /* Оптимальный размер для аватара */
+  height: 200px;
+  border-radius: 50%; /* Делает круг */
+  object-fit: cover; /* Обрезает картинку, чтобы не сжималась */
+
+  /* Зеленая рамка и свечение */
+  border: 3px solid #00ff41;
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.3);
+
+  /* Анимация для наведения */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.rounded-image:hover {
+  transform: scale(1.05); /* Чуть увеличивается */
+  box-shadow: 0 0 50px rgba(0, 255, 65, 0.6); /* Свечение становится мощным */
+}
+
+/* 6. ЗАГОЛОВОК (SYNTEX) */
+.SYNTEX {
+  font-family: "JetBrains Mono", monospace; /* Шрифт как в коде */
+  font-size: 2.5rem; 
+  font-weight: 700;
+  color: #fff;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  letter-spacing: 3px; /* Расстояние между буквами */
+
+  /* Мощный неоновый эффект (слоями) */
+  text-shadow:
+    0 0 5px #00ff41,
+    0 0 10px #00ff41,
+    0 0 20px rgba(0, 255, 65, 0.5),
+    0 0 40px rgba(0, 255, 65, 0.3);
+}
+
+/* 7. ТЕКСТ ОПИСАНИЯ */
+.my_info {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cccccc; /* Светло-серый, чтобы глаза не уставали */
+  margin-bottom: 30px; /* Отступ до кнопки */
+}
+
+/* 8. БЛОК ДЛЯ КНОПОК */
+.links {
+  display: flex;
+  justify-content: center; /* Центрирует кнопку внутри */
+  width: 100%;
+}
+
+/* 9. СТИЛЬ КНОПКИ */
+
+/* Эффект при наведении на кнопку */
+.btn:hover {
+  background-color: #00ff41;
+  color: #000000; /* Текст становится черным */
+  box-shadow: 0 0 25px #00ff41; /* Кнопка светится */
+  transform: translateY(-3px); /* Кнопка чуть подпрыгивает */
+}
+/* СЕТКА ХАРАКТЕРИСТИК */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Две колонки одинаковой ширины */
+  gap: 10px; /* Расстояние между ячейками */
+  margin-bottom: 25px; /* Отступ снизу до кнопок */
+  width: 100%;
+}
+
+.stat-box {
+  background-color: rgba(0, 255, 65, 0.05); /* Очень слабый зеленый фон */
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; /* Текст друг под другом */
+  transition: 0.3s;
+}
+.btn {
+  text-decoration: none;
+  
+  /* ЭТИ ТРИ СТРОКИ ВЫРАВНИВАЮТ ИКОНКУ И ТЕКСТ: */
+  display: flex;         /* Включаем режим гибкого контейнера */
+  align-items: center;   /* Выравниваем по вертикали (чтобы иконка была по центру) */
+  gap: 10px;             /* Расстояние между иконкой и текстом */
+  
+  color: #00ff41;
+  background-color: transparent;
+  border: 2px solid #00ff41;
+  
+  padding: 12px 35px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 6px;
+  
+  transition: 0.3s ease;
+}
+/* Эффект при наведении на характеристику */
+.stat-box:hover {
+  border-color: #00ff41;
+  background-color: rgba(0, 255, 65, 0.1);
+  transform: translateY(-2px);
+}
+
+.stat-label {
+  font-size: 0.7rem; /* Маленький текст для названия */
+  color: #888;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 255, 65, 0.5); /* Легкое свечение текста */
+}
+/* Правила для экранов меньше 600px (телефоны) */
+@media (max-width: 600px) {
+    .card {
+        width: 90%; /* Карточка занимает 90% ширины экрана, а не 400px */
+        padding: 20px; /* Отступы внутри поменьше */
+    }
+
+    .SYNTEX {
+        font-size: 2rem; /* Уменьшаем шрифт заголовка */
+    }
+    
+    .rounded-image {
+        width: 150px; /* Уменьшаем аватарку */
+        height: 150px;
+    }
+}
+/* ПОДВАЛ (FOOTER) */
+.footer {
+  margin-top: 30px; /* Отступ от кнопок */
+  padding-top: 15px; /* Отступ от линии до текста */
+  
+  border-top: 1px solid #333; /* Тонкая серая линия-разделитель */
+  
+  color: #555; /* Очень тусклый цвет текста */
+  font-size: 0.75rem; /* Маленький размер шрифта */
+  font-family: 'JetBrains Mono', monospace; /* Шрифт кода */
+  
+  transition: 0.3s; /* Плавность для наведения */
+  cursor: default; /* Курсор остается стрелочкой */
+}
+
+/* Эффект при наведении мыши на футер */
+.footer:hover {
+  color: #00ff41; /* Текст загорается зеленым */
+  border-top-color: #00ff41; /* Линия тоже становится зеленой */
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5); /* Свечение */
+}
