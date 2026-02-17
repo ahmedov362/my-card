@@ -5,7 +5,6 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100; /* Высота на весь экран */
   background-color: #050505; /* Почти черный цвет */
   /* Радиальный градиент: светлее в центре, чернее по краям */
   background-image: radial-gradient(circle at center, #112211 0%, #000000 80%);
@@ -208,3 +207,4 @@ body {
   text-shadow: 0 0 10px rgba(0, 255, 65, 0.5); /* Свечение */
 
 }
+
